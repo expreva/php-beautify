@@ -3,6 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Standalone tool to lint and format source files using PHP Code Sniffer and WordPress Code Standards running on PHP WebAssembly",
+  "homepage": "https://github.com/tangibleinc/php-beautify",
+  "repository": "git@github.com:tangibleinc/php-beautify.git",
   "main": "index.js",
   "bin": {
     "php-beautify": "./run.js"
