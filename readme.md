@@ -56,28 +56,22 @@ php-beautify format [...files]
 
 ## Included libraries
 
-### PHP WebAssembly
+- [PHP WebAssembly](https://github.com/WordPress/wordpress-playground/tree/trunk/packages/php-wasm/node)
 
-https://github.com/WordPress/wordpress-playground/tree/trunk/packages/php-wasm/node
+- [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 
-### PHP Code Sniffer
+  ```sh
+  curl -LO https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.7.2/phpcbf.phar && curl -LO https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.7.2/phpcs.phar
+  ```
 
-https://github.com/squizlabs/PHP_CodeSniffer
+- [WordPress Coding Standard](https://github.com/WordPress/WordPress-Coding-Standards)
 
-```sh
-curl -LO https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.7.2/phpcbf.phar && curl -LO https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.7.2/phpcs.phar
-```
+    ```sh
+    curl -L https://github.com/WordPress/WordPress-Coding-Standards/archive/refs/tags/3.0.1.tar.gz | tar zx
+    mkdir -p wpcs && for folder in WordPress WordPress-Core WordPress-Docs WordPress-Extra; do cp -r WordPress-Coding-Standards-3.0.1/"$folder" wpcs/"$folder"; done
+    rm -rf WordPress-Coding-Standards-3.0.1
+    ```
 
-### WordPress Coding Standard
-
-https://github.com/WordPress/WordPress-Coding-Standards
-
-- Dependencies
-  - https://github.com/PHPCSStandards/PHPCSUtils
-  - https://github.com/PHPCSStandards/PHPCSExtra
-
-```sh
-curl -L https://github.com/WordPress/WordPress-Coding-Standards/archive/refs/tags/3.0.1.tar.gz | tar zx
-mkdir -p wpcs && for folder in WordPress WordPress-Core WordPress-Docs WordPress-Extra; do cp -r WordPress-Coding-Standards-3.0.1/"$folder" wpcs/"$folder"; done
-rm -rf WordPress-Coding-Standards-3.0.1
-```
+  - Dependencies
+    - [PHPCSUtils](https://github.com/PHPCSStandards/PHPCSUtils)
+    - [PHPCSExtra](https://github.com/PHPCSStandards/PHPCSExtra)
