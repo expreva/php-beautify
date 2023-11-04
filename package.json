@@ -2,12 +2,19 @@
   "name": "@tangible/php-beautify",
   "type": "module",
   "version": "1.0.0",
-  "description": "Lint and format PHP files using PHP Code Sniffer and WordPress Code Standards",
+  "description": "Standalone tool to lint and format source files using PHP Code Sniffer and WordPress Code Standards running on PHP WebAssembly",
   "main": "index.js",
+  "bin": {
+    "php-beautify": "./run.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@php-wasm/cli": "^0.3.1",
+    "fast-glob": "^3.3.1"
+  }
 }
