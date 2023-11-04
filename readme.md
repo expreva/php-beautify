@@ -66,11 +66,11 @@ php-beautify format [...files]
 
 - [WordPress Coding Standard](https://github.com/WordPress/WordPress-Coding-Standards)
 
-    ```sh
-    curl -L https://github.com/WordPress/WordPress-Coding-Standards/archive/refs/tags/3.0.1.tar.gz | tar zx
-    mkdir -p wpcs && for folder in WordPress WordPress-Core WordPress-Docs WordPress-Extra; do cp -r WordPress-Coding-Standards-3.0.1/"$folder" wpcs/"$folder"; done
-    rm -rf WordPress-Coding-Standards-3.0.1
-    ```
+  ```sh
+  curl -L https://github.com/WordPress/WordPress-Coding-Standards/archive/refs/tags/3.0.1.tar.gz | tar zx
+  mkdir -p wpcs && for folder in WordPress WordPress-Core WordPress-Docs WordPress-Extra; do cp -r WordPress-Coding-Standards-3.0.1/"$folder" wpcs/"$folder"; done
+  rm -rf WordPress-Coding-Standards-3.0.1
+  ```
 
   - Dependencies
     - [PHPCSUtils](https://github.com/PHPCSStandards/PHPCSUtils)
