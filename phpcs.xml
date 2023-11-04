@@ -61,7 +61,7 @@
     <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
     <exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
     <exclude name="WordPress.Arrays.ArrayIndentation"/>
-    <exclude name="WordPress.WhiteSpace.PrecisionAlignment"/>
+    <exclude name="Universal.WhiteSpace.PrecisionAlignment"/>
 
   </rule>
 
@@ -89,7 +89,7 @@
       <property name="tabIndent" value="false"/>
     </properties>
   </rule>
-  <rule ref="WordPress.WhiteSpace.PrecisionAlignment">
+  <rule ref="Universal.WhiteSpace.PrecisionAlignment">
     <properties>
       <property name="tabWidth" value="2"/>
     </properties>
