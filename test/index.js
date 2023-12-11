@@ -2,7 +2,7 @@ import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import fs from 'fs/promises'
 import { lintPhpFiles, formatPhpFiles } from '../index.js'
-import { createPhp } from '../php-cli/index.js'
+// import { createPhp } from '../php-cli/index.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -22,6 +22,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
   console.log('Formatting..')
   await formatPhpFiles([targetFile])
 
-  // Exit is necessary to end PHP process
+  // Exit to stop PHP process
   process.exit()
 })().catch(console.error)

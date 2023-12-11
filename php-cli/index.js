@@ -14,7 +14,7 @@ import {
 } from '@php-wasm/universal'
 
 import { NodePHP } from '@php-wasm/node'
-import { spawn } from 'child_process'
+// import { spawn } from 'child_process'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 

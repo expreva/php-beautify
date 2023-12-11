@@ -8,7 +8,7 @@ const phpLibPath = path.resolve(__dirname)
 const phpcbfPath = path.join(phpLibPath, 'phpcbf.phar')
 const phpcsPath = path.join(phpLibPath, 'phpcs.phar')
 const wpcsPath = path.join(phpLibPath, 'wpcs')
-const standardPath = path.join(phpLibPath, 'phpcs.xml')
+const standardPath = path.join(wpcsPath, 'WordPress')
 
 export async function lintPhpFiles(files, props = {}) {
   return await processPhpFiles(files, {
