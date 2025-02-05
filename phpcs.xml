@@ -34,6 +34,7 @@
     <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
     <exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed"/>
     <exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound"/>
+    <exclude name="Generic.Formatting.MultipleStatementAlignment"/>
 
     <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
@@ -57,6 +58,8 @@
     <exclude name="WordPress.PHP.YodaConditions.NotYoda"/>
     <exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedScript"/>
 
+    <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
+
     <!-- 2-space indent -->
     <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
     <exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
@@ -69,6 +72,7 @@
   <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
+      <property name="exact" value="true"/>
       <property name="indent" value="2"/>
       <property name="tabIndent" value="false"/>
       <property name="ignoreIndentationTokens" type="array">
@@ -76,6 +80,11 @@
         <element value="T_NOWDOC"/>
         <element value="T_INLINE_HTML"/>
       </property>
+    </properties>
+  </rule>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
+    <properties>
+      <property name="indent" value="2"/>
     </properties>
   </rule>
   <rule ref="PEAR.Functions.FunctionCallSignature.Indent">
@@ -91,7 +100,7 @@
   </rule>
   <rule ref="Universal.WhiteSpace.PrecisionAlignment">
     <properties>
-      <property name="tabWidth" value="2"/>
+      <property name="indent" value="2"/>
     </properties>
   </rule>
 

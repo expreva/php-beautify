@@ -1,12 +1,12 @@
 <?php
 $var = 'hi';
 
-      echo $var;
+echo $var;
 
 function asdf(
-    $asdf,
+  $asdf,
   $qwer
 ) {
-      $arr = array();
+  $arr = array();
   $arr2 = [];
-};
+}
