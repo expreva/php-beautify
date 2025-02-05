@@ -13,29 +13,35 @@ const standardPath = path.join(phpLibPath, 'phpcs.xml')
 export async function lintPhpFiles(files, props = {}) {
   return await processPhpFiles(files, {
     ...props,
-    type: 'lint'
+    type: 'lint',
   })
 }
 
 export async function formatPhpFiles(files, props = {}) {
   return await processPhpFiles(files, {
     ...props,
-    type: 'format'
+    type: 'format',
   })
 }
 
 export async function processPhpFiles(files, props = {}) {
-
   const { type = 'format', optionsList = [] } = props
   const runtime = type === 'format' ? phpcbfPath : phpcsPath // or lint
 
-  const command = optionsList.includes('--help')
-    ? `${optionsList.join(' ')}`
-    : `-s -q --extensions=php --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 --parallel=5 --runtime-set installed_paths ${wpcsPath} --standard=${standardPath}${
-        optionsList.length ? ' ' + optionsList.join(' ') : ''
-      }` //  ${fileList}
+  if (!optionsList.includes('--help')) {
+    optionsList.unshift(
+      '-s', // Show rule name
+      '-q', // Quiet mode
+      '--extensions=php',
+      '--runtime-set', 'ignore_errors_on_exit', '1',
+      '--runtime-set', 'ignore_warnings_on_exit', '1',
+      '--parallel=5',
+      '--runtime-set', 'installed_paths', wpcsPath,
+      `--standard=${standardPath}`
+    )
+  }
 
-  // console.log(type === 'format' ? 'phpcsf' : 'phpcs', command, ...files)
+  console.log(type === 'format' ? 'phpcsf' : 'phpcs', ...optionsList, '...files')
 
   /**
    * Patch console.log() to remove message when program terminates with
@@ -57,7 +63,7 @@ export async function processPhpFiles(files, props = {}) {
   }
 
   try {
-    await php.run([runtime, ...command.split(' '), ...files])
+    await php.run([runtime, ...optionsList, ...files])
   } catch (e) {
     // CodeSniffer terminates with error code 1 when format applied
   }
