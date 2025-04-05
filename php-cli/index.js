@@ -16,10 +16,11 @@ import { rootCertificates } from 'tls';
 import {
 	LatestSupportedPHPVersion,
 	SupportedPHPVersionsList,
-  PHP
-} from '@php-wasm/universal';
+  PHP,
+  loadNodeRuntime, 
+  useHostFilesystem
+} from '@expreva/php-wasm-8-4';
 import { spawn } from 'child_process';
-import { loadNodeRuntime, useHostFilesystem } from '@php-wasm/node';
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
