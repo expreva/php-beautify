@@ -17,7 +17,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@php-wasm/cli": "^1.0.24",
+    "@expreva/php-wasm-8-4": "^1.0.28",
     "fast-glob": "^3.3.3"
   }
 }
