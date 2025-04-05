@@ -58,21 +58,35 @@ php-beautify format [...files]
 
 - [PHP WebAssembly](https://github.com/WordPress/wordpress-playground/tree/trunk/packages/php-wasm/node)
 
-- [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+- [PHP Code Sniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer)
 
   ```sh
-  curl -LO https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.7.2/phpcbf.phar
-  curl -LO https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.7.2/phpcs.phar
+  curl -LO https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/3.11.3/phpcbf.phar
+  curl -LO https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/3.11.3/phpcs.phar
   ```
 
 - [WordPress Coding Standard](https://github.com/WordPress/WordPress-Coding-Standards)
 
   ```sh
-  curl -L https://github.com/WordPress/WordPress-Coding-Standards/archive/refs/tags/3.0.1.tar.gz | tar zx
-  mkdir -p wpcs && for folder in WordPress WordPress-Core WordPress-Docs WordPress-Extra; do cp -r WordPress-Coding-Standards-3.0.1/"$folder" wpcs/"$folder"; done
-  rm -rf WordPress-Coding-Standards-3.0.1
+  curl -L https://github.com/WordPress/WordPress-Coding-Standards/archive/refs/tags/3.1.0.tar.gz | tar zx
+  mkdir -p wpcs
+  for folder in WordPress WordPress-Core WordPress-Docs WordPress-Extra; do echo "Copying $folder"; rsync -r WordPress-Coding-Standards-*/"$folder"/ wpcs/"$folder"; done
+  rm -rf WordPress-Coding-Standards-*
   ```
 
-  - Dependencies
-    - [PHPCSUtils](https://github.com/PHPCSStandards/PHPCSUtils)
-    - [PHPCSExtra](https://github.com/PHPCSStandards/PHPCSExtra)
+- Dependencies
+  - [PHPCSUtils](https://github.com/PHPCSStandards/PHPCSUtils)
+
+  ```sh
+  curl -L https://github.com/PHPCSStandards/PHPCSUtils/archive/refs/tags/1.0.12.tar.gz | tar zx
+  rsync -vr PHPCSUtils-*/PHPCSUtils/ wpcs/PHPCSUtils
+  rm -rf PHPCSUtils-*
+  ```
+
+  - [PHPCSExtra](https://github.com/PHPCSStandards/PHPCSExtra)
+
+  ```sh
+  curl -L https://github.com/PHPCSStandards/PHPCSExtra/archive/refs/tags/1.2.1.tar.gz | tar zx
+  for folder in Modernize NormalizedArrays Universal; do echo "Copying $folder"; rsync -r PHPCSExtra-*/"$folder"/ wpcs/"$folder"; done
+  rm -rf PHPCSExtra-*
+  ```

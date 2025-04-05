@@ -29,7 +29,7 @@ export async function cli() {
     // Exit is necessary to end PHP process
     process.exit()
   } else {
-    console.log(`Tangible: PHP Beautify
+    console.log(`PHP Beautify
 
 Usage: php-beautify [command] [...options]
 Available commands:

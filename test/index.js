@@ -2,13 +2,12 @@ import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import fs from 'fs/promises'
 import { lintPhpFiles, formatPhpFiles } from '../index.js'
-// import { createPhp } from '../php-cli/index.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 ;(async () => {
   const srcFile = path.join(__dirname, 'example.php')
-  const targetFile = path.join(__dirname, 'example-copy.php')
+  const targetFile = path.join(__dirname, 'example-formatted.php')
 
   await fs.copyFile(srcFile, targetFile)
 
